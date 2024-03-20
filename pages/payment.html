@@ -3,43 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment and Accounting</title>
+    <title>Order and Payment Information</title>
+    <style>
+        /* Basic styling for the form */
+        form {
+            width: 50%;
+            margin: 0 auto; /* Center the form horizontally */
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
 
-<h2>Payment and Accounting</h2>
+<h2 style="text-align: center;">Order and Payment Information</h2>
 
-<div>
-    <h3>Payment Details</h3>
-    <p>Thank you for your purchase! Below are the details of your payment:</p>
-    <ul>
-        <li><strong>Product Name:</strong> Penshoppe Cap</li>
-        <li><strong>Price:</strong> ₱399.00</li>
-        <li>
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" value="1" min="1">
-        </li>
-        <!-- Add more payment details here as needed -->
-    </ul>
-    <p>Your payment has been processed successfully.</p>
-</div>
+<form id="orderForm" action="payment_successful.html" method="post">
+    <label for="productName">Product Name:</label>
+    <input type="text" id="productName" name="productName" value="Penshoppe Cap" readonly>
 
-<div>
-    <h3>Accounting</h3>
-    <p>Below is a summary of the transaction for accounting purposes:</p>
-    <ul>
-        <li><strong>Product Name:</strong> Penshoppe Cap</li>
-        <li><strong>Price:</strong> ₱399.00</li>
-        <li><strong>Quantity:</strong> <span id="displayQuantity">1</span></li>
-        <!-- Add more accounting details here as needed -->
-    </ul>
-    <p>This transaction has been recorded in the accounting system.</p>
-</div>
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" min="1" max="100" value="1" required>
+
+    <label for="totalAmount">Total Amount:</label>
+    <input type="text" id="totalAmount" name="totalAmount" placeholder="Total amount will be calculated automatically" readonly>
+
+    <hr>
+
+    <label for="yourName">Your Name:</label>
+    <input type="text" id="yourName" name="yourName" placeholder="Enter your Name" required>
+
+    <label for="expiryDate">Expiration Date:</label>
+    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YYYY" required>
+
+    <label for="cvv">CVV:</label>
+    <input type="number" id="cvv" name="cvv" placeholder="Enter CVV" min="100" max="999" required>
+
+    <label for="cardType">Mode of Payment:</label>
+    <select id="cardType" name="cardType" required>
+        <option value="visa">Gcash</option>
+        <option value="mastercard">Paypal</option>
+        <option value="amex">Paymaya</option>
+        <option value="discover">Cash on Delivery</option>
+    </select>
+
+    <label for="billingAddress">Billing Address:</label>
+    <textarea id="billingAddress" name="billingAddress" rows="4" placeholder="Enter your billing address" required></textarea>
+
+    <input type="submit" value="Submit Order and Payment">
+</form>
 
 <script>
-    // Update the displayed quantity when the input changes
-    document.getElementById("quantity").addEventListener("change", function() {
-        document.getElementById("displayQuantity").innerText = this.value;
+    // Function to calculate the total amount based on quantity
+    document.getElementById('quantity').addEventListener('input', function() {
+        var quantity = parseInt(this.value);
+        var unitPrice = 399; // Assuming the unit price of the product is 399
+        var totalAmount = quantity * unitPrice;
+        document.getElementById('totalAmount').value = '₱' + totalAmount.toFixed(2); // Display total amount with currency symbol
     });
 </script>
 
