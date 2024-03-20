@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Inventory</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Styles for the navbar */
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .product-image {
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .buy-button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#Customers Services">Customers Services</a>
+    <a href="#Reports"></a>
+</div>
+
+<h2>Product Inventory</h2>
+
+<table>
+    <tr>
+        <th>Product ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Image</th>
+        <th>Action</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Penshoppe Cap</td>
+        <td>₱399.00</td>
+        <td>50</td>
+        <td><img class="product-image" src="https://pbs.twimg.com/media/EICaHaGX4AEFXTf.jpg:large" alt="Penshoppe Cap Image"></td>
+        <td><button class="buy-button" onclick="buyProduct('Product A')">Buy Now</button></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Penshoppe Tees</td>
+        <td>₱499.00</td>
+        <td>100</td>
+        <td><img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTYq8POz-JJweG1zMlKfwjDgFwt--OOtOh7A&usqp=CAU" alt="Product B Image"></td>
+        <td><button class="buy-button" onclick="buyProduct('Product B')">Buy Now</button></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Penshoppe Pants</td>
+        <td>₱699.00</td>
+        <td>50</td>
+        <td><img class="product-image" src="https://ph-live-01.slatic.net/p/2c338ea5a22ae6fcd5be9ce104f4ac22.jpg" alt="Penshoppe Pants Image"></td>
+        <td><button class="buy-button" onclick="buyProduct('Product C')">Buy Now</button></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Penshoppe Shoes</td>
+        <td>₱599.00</td>
+        <td>50</td>
+        <td><img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFIZuWylzTkpnWb_h4VLmaNSU7toLsjDU6Mg&usqp=CAU" alt="Penshoppe Pants Image"></td>
+        <td><button class="buy-button" onclick="buyProduct('Product D')">Buy Now</button></td>
+    </tr>
+ 
+</table>
+
+<script>
+    function buyProduct(productName) {
+        // Redirect to the payment and accounting page
+        window.location.href = "pages/payment.html";
+        // You can also pass data to the payment page if needed, like product name, price, etc.
+        // Example: window.location.href = "payment%26accounting.html?product=" + encodeURIComponent(productName);
+    }
+</script>
+
+</body>
+</html>

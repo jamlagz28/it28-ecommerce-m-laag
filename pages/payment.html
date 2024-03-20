@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment and Accounting</title>
+</head>
+<body>
+
+<h2>Payment and Accounting</h2>
+
+<div>
+    <h3>Payment Details</h3>
+    <p>Thank you for your purchase! Below are the details of your payment:</p>
+    <ul>
+        <li><strong>Product Name:</strong> Penshoppe Cap</li>
+        <li><strong>Price:</strong> ₱399.00</li>
+        <li>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1">
+        </li>
+        <!-- Add more payment details here as needed -->
+    </ul>
+    <p>Your payment has been processed successfully.</p>
+</div>
+
+<div>
+    <h3>Accounting</h3>
+    <p>Below is a summary of the transaction for accounting purposes:</p>
+    <ul>
+        <li><strong>Product Name:</strong> Penshoppe Cap</li>
+        <li><strong>Price:</strong> ₱399.00</li>
+        <li><strong>Quantity:</strong> <span id="displayQuantity">1</span></li>
+        <!-- Add more accounting details here as needed -->
+    </ul>
+    <p>This transaction has been recorded in the accounting system.</p>
+</div>
+
+<script>
+    // Update the displayed quantity when the input changes
+    document.getElementById("quantity").addEventListener("change", function() {
+        document.getElementById("displayQuantity").innerText = this.value;
+    });
+</script>
+
+</body>
+</html>
