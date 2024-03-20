@@ -58,7 +58,7 @@
 <div class="navbar">
     <a href="#home">Home</a>
     <a href="#Customers Services">Customers Services</a>
-    <a href="#Reports"></a>
+    <a href="#logistics">Logistics</a>
 </div>
 
 <h2>Product Inventory</h2>
@@ -78,7 +78,7 @@
         <td>₱399.00</td>
         <td>50</td>
         <td><img class="product-image" src="https://pbs.twimg.com/media/EICaHaGX4AEFXTf.jpg:large" alt="Penshoppe Cap Image"></td>
-        <td><button class="buy-button" onclick="buyProduct('Product A')">Buy Now</button></td>
+        <td><a href="payment.html"><button class="buy-button">Buy Now</button></a></td>
     </tr>
     <tr>
         <td>2</td>
@@ -86,7 +86,7 @@
         <td>₱499.00</td>
         <td>100</td>
         <td><img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTYq8POz-JJweG1zMlKfwjDgFwt--OOtOh7A&usqp=CAU" alt="Product B Image"></td>
-        <td><button class="buy-button" onclick="buyProduct('Product B')">Buy Now</button></td>
+        <td><a href="payment.html"><button class="buy-button">Buy Now</button></a></td>
     </tr>
     <tr>
         <td>3</td>
@@ -94,7 +94,7 @@
         <td>₱699.00</td>
         <td>50</td>
         <td><img class="product-image" src="https://ph-live-01.slatic.net/p/2c338ea5a22ae6fcd5be9ce104f4ac22.jpg" alt="Penshoppe Pants Image"></td>
-        <td><button class="buy-button" onclick="buyProduct('Product C')">Buy Now</button></td>
+        <td><a href="payment.html"><button class="buy-button">Buy Now</button></a></td>
     </tr>
     <tr>
         <td>4</td>
@@ -102,19 +102,10 @@
         <td>₱599.00</td>
         <td>50</td>
         <td><img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFIZuWylzTkpnWb_h4VLmaNSU7toLsjDU6Mg&usqp=CAU" alt="Penshoppe Pants Image"></td>
-        <td><button class="buy-button" onclick="buyProduct('Product D')">Buy Now</button></td>
+        <td><a href="payment.html"><button class="buy-button">Buy Now</button></a></td>
     </tr>
  
 </table>
-
-<script>
-    function buyProduct(productName) {
-        // Redirect to the payment and accounting page
-        window.location.href = "pages/payment.html";
-        // You can also pass data to the payment page if needed, like product name, price, etc.
-        // Example: window.location.href = "payment%26accounting.html?product=" + encodeURIComponent(productName);
-    }
-</script>
 
 </body>
 </html>
